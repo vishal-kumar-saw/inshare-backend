@@ -1,4 +1,4 @@
-## This is the frontend part of the file sharing web app
+## This is the backend part of the file sharing web app
 * File sharing web app with drag and drop and file upload
 * You can upload your file and share the download link or you can even email the download link to someone.
 ## Tech Stack 
