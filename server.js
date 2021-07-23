@@ -1,23 +1,20 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 const connectDB = require('./config/db');
 connectDB();
 
-//cors
-// const corsOptions = {
-//     origin: process.env.ALLOWED_CLIENTS.split(',')
-// }
-// app.use(cors(corsOptions));
+
+app.use(cors());
 //template engine
-app.use(function (req, res, next) {
-    //Enabling CORS
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x - client - key, x - client - token, x - client - secret, Authorization");
-    next();
-});
+// app.use(function (req, res, next) {
+//     //Enabling CORS
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x - client - key, x - client - token, x - client - secret, Authorization");
+//     next();
+// });
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
